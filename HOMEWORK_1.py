@@ -1,8 +1,6 @@
 print('Hello world')
 
-print('Glory to Ukraine')
-print('Just do it!')
-print('Red Bull Gives You Wings')
+print('Glory to Ukraine\nJust do it!\nRed Bull Gives You Wings')
 
 a = input('A=')
 b = input('B=')
