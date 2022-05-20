@@ -16,6 +16,6 @@ print('c / d=', c / d)
 import math
 
 r = float(input('Radius='))
-print('Diametr:', 'r*2=', r*2)
+print('Diametr:', 'r*2=', r * 2)
 print('Circumference:', '2 * math.pi * r=', 2 * math.pi * r)
-print('Area:', 'math.pi*(r**2)=', math.pi*((r**2)))
+print('Area:', 'math.pi*(r**2)=', math.pi * ((r ** 2)))
