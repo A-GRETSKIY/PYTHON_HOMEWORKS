@@ -1,3 +1,5 @@
+import math
+
 print('Hello world')
 
 print('Glory to Ukraine\nJust do it!\nRed Bull Gives You Wings')
@@ -13,9 +15,8 @@ print('c - d=', c - d)
 print('c * d=', c * d)
 print('c / d=', c / d)
 
-import math
 
 r = float(input('Radius='))
 print('Diametr:', 'r*2=', r * 2)
 print('Circumference:', '2 * math.pi * r=', 2 * math.pi * r)
-print('Area:', 'math.pi*(r**2)=', math.pi * ((r ** 2)))
+print('Area:', 'math.pi*(r**2)=', math.pi * (r ** 2))
