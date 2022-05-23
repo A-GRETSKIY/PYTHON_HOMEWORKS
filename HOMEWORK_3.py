@@ -13,6 +13,13 @@ elif 110 <= apartment <= 144:
     print('Этаж: ', (apartment - 1) % 36 // 4 + 1)
 else:
     print('Данной квартиры в доме нету!')
+    
+# apartment = int(input('Номер квартиры = '))
+# if apartment <=144:
+#     print('Подъезд: ', (apartment - 1 ) // 36 + 1)
+#     print('Этаж: ', (apartment - 1) % 36 // 4 + 1)
+# elif apartment > 144:
+#     print('Квартиры нет в данном доме')
 
 x = int(input('Year: '))
 if (not x % 4) or (x % 100) and (not x % 400):
