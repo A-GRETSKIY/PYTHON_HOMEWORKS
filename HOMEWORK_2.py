@@ -20,9 +20,10 @@ print((x % 2 and 'Число нечетное') or 'Число четное')
 # print(not x % 2)
 # print(bool(x % 2))
 
+a = int(input('Введите число A: '))
 b = int(input('Введите число B: '))
 c = int(input('Введите число C: '))
 print('Максимальное число: ', max(a, b, c))
 
-# a, b, c = map(int, input("Введите значение чисел: ").split())
-# print(max(a, b, c))
+a, b, c = map(int, input("Введите значение чисел: ").split())
+print(max(a, b, c))
