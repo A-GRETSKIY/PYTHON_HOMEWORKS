@@ -6,6 +6,8 @@ else:
     print('Bad day')
 print('Good luck!')
 
+###
+
 day = int(input('Day= '))
 if day == 1:
     print('Monday')
@@ -23,6 +25,8 @@ elif day == 7:
     print('Sunday')
 else:
     print('Error')
+    
+###
 
 # ЗАДАЧА НА СОБЕСЕДОВАНИИ
 n = 1
@@ -34,6 +38,8 @@ elif n <= 0:
     print('world')
 else:
     print('Error')
+    
+###
 
 a = 20
 b = 30
