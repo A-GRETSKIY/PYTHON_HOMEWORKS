@@ -27,9 +27,7 @@ print('c / d=', res)
 ###
 
 import math
-
 r = float(input('Radius='))
-
 res = r*2
 print('Diametr:', 'r*2=', res)
 res = 2 * math.pi * r
