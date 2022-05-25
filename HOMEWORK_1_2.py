@@ -1,3 +1,14 @@
+# Homework 2
+# 1. Construct an integer from the string "123"
+# 2. Construct a float from the integer 123
+# 3. Construct an integer from the float 12.345
+# 4. Write a Python-script that detects the last 4 digits of a credit card
+# 5. Write a Python-script that calculates the sum of the digits of a three-digit number
+# 6. Write a program that calculates and displays the area of a triangle if its sides are known
+# 7. *Write a Python-script that calculates the sum of the digits of a number
+# 8. *Determine the number of digits in a number
+# 9. *Print the digits in reverse order
+
 a = int(str('123'))
 print(a)
 
