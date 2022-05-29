@@ -28,5 +28,3 @@ res = 2 * math.pi * r
 print('Circumference:', '2 * math.pi * r=', res)
 res = math.pi * ((r ** 2))
 print('Area:', 'math.pi*(r**2)=', res)
-
-print('хуй')
