@@ -25,5 +25,5 @@ b = int(input('Введите число B: '))
 c = int(input('Введите число C: '))
 print('Максимальное число: ', max(a, b, c))
 
-a, b, c = map(int, input("Введите значение чисел: ").split())
-print(max(a, b, c))
+# a, b, c = map(int, input("Введите значение чисел: ").split())
+# print(max(a, b, c))
