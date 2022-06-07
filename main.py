@@ -1,3 +1,12 @@
-name = input('Name: ')
-res = 'Correct' if name.istitle() and name.isalpha() else 'Incorrect'
+s = input()
+res = {}
+for item in s:
+    if res.get(item):
+        res[item] += 1
+    else:
+        res[item] = 1
 print(res)
+
+
+
+
