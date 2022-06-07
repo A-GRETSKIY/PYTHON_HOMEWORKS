@@ -31,7 +31,7 @@ print('Счастливый' if x1 == x2 else 'Обычный')
 
 a = input().rjust(6, '0')   # СДВИГАЕТ СТРОКУ ВПРАВО И ДОБАВЛЯЕТ НУЛИ
 a = list(map(int, a))
-if (int(a[0])+int(a[1])+int(a[2])) == (int(a[3])+int(a[4])+int(a[5])):
+if (int(a[0]) + int(a[1]) + int(a[2])) == (int(a[3]) + int(a[4]) + int(a[5])):
     print('YES')
 else:
     print('NO')
