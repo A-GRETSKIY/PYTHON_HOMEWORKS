@@ -1,9 +1,17 @@
             # 1.Используя словарь, напишите программу, которая выведет на экран
             # название дня недели по его номеру. (1 - «Monday»)
 
-week_day = {1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'}
-for key in week_day:
-    print(key, week_day[key])
+week_day = int(input())
+days = {1: 'Monday',
+        2: 'Tuesday',
+        3: 'Wednesday',
+        4: 'Thursday',
+        5: 'Friday',
+        6: 'Saturday',
+        7: 'Sunday'
+        }
+res = days.get(week_day, 'Error')
+print(res)
 
             # 2.Представьте описание кота (домашнее животное) на основе словаря
 
