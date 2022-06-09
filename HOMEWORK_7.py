@@ -10,23 +10,26 @@ days = {1: 'Monday',
         6: 'Saturday',
         7: 'Sunday'
         }
-res = days.get(week_day, 'Error')
+res = days.get(week_day, 'Error')   # если в словаре нету элемента, то get возвращает None, но его можно поменять
 print(res)
 
             # 2.Представьте описание кота (домашнее животное) на основе словаря
 
 cat = {
-    'name': 'Begemot',
+    'name': 'Tom',
     'color': 'black',
     'age': '2',
     'breed': 'Sphynx',
-}
+    }
+print(cat['name'])
 print(cat)
 
             # 3.Напишите программу которая считает строку текста с клавиатуры и
             # выведет на экран статистику, сколько раз какая буква встречается в
             # этой строке. Например, для строки «Hello world» эта статистика
             # выглядит, как: «H» - 1 , «e» - 1, «l» - 3 и т. д.
+
+            # Exemple 1
 
 s = input()
 res = {}
@@ -36,3 +39,25 @@ for item in s:
     else:
         res[item] = 1
 print(res)
+
+            # Exemple 2
+
+s = input()
+res = {}
+for item in s:
+    if not res.get(item):
+        res[item] = s.count(item)
+print(res)
+
+            # 4.Ввести с клавиатуры число (до миллиона), которое обозначает количество
+            # долларов и центов пользователя. Вывести это количество прописью.
+            # Например:
+            # How much money do you have?
+            # 123,34
+            # You have: one hundred twenty three dollars thirty four cents
+
+
+            # 5.Напишите программу, которая переведет целое число (от 1 до 100) из
+            # римской записи в обычные цифры.
+            # Например: XXII -> 22
+
