@@ -12,6 +12,8 @@ print(res)
             # кратными 3, другой с числами кратными 5. С помощью множеств
             # создайте список с числами, которые есть в обоих множествах.
 
+            # Exemple 1
+
 a = []
 for i in range(3, 100, 3):
     a.append(i)
@@ -20,3 +22,12 @@ for j in range(5, 100, 5):
     b.append(j)
 res = set(a) & set(b)
 print(res)
+
+            # Exemple 2
+
+a = []
+for i in range(3, 100, 3): a.append(i)
+b = []
+for j in range(5, 100, 5): b.append(j)
+res = set(a) & set(b)
+print(res) ### ЧЕРЕЗ LIST COMPREHENSIONS
