@@ -72,3 +72,24 @@ for i in range(len(s) // 2):
         break
 else:
     print('Error')
+
+            # 7. Напишите программу для очистки текста от html-тэгов. Больше о htmlтэгах https://html5book.ru/html-tags/
+            # Также необходимо учесть пару особенностей:
+            # - помимо одинарных тэгов, есть парные тэги, например <div> </div>, т.е.
+            # первый тэг открывающий , а второй закрывающий.
+            # - тэг внутри себя, может содержать кучу доп. информации.
+            # Например <div id="rcnt" style="clear:both;position:relative;zoom:1">
+
+tags_1 = ['p', 'a', 'h1'] # ДОБАВИТЬ ОСТАЛЬНЫЕ ТЕГИ (https://html5book.ru/html-tags/)
+html_text = '''
+    <h1 sdfgkgkefcpd>dsdfgwfws</h1>
+    <p wseefsdfdsfsdgfds <a dfgdsfwfw>sedfrgfregfe</a> </p>
+'''
+for tag in tags_1:
+    while '<' + tag:
+        start = html_text.find(f'<tag')
+        stop = html_text.find(f'>', start + 1)
+
+        html_text[start, stop +1] = ''
+
+        html_text = html_text.replace(f'</{tag}', '')
