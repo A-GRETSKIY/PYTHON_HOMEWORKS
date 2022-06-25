@@ -57,7 +57,7 @@ print(gr_1)  # выводит всех студентов
 
 gr_1.del_student(students[0])  # удаляет студента по индексу
 
-print(gr_1.search_by_chr('Iv'))  # выводит по символам, но как объекты
+print(gr_1.search_by_chr('Ivanov2'))  # выводит по символам, но как объекты
 
-for item in gr_1.search_by_chr('Iv'):
+for item in gr_1.search_by_chr('Ivanov2'):
     print(item)  # выводит по символам, но в стандартный поток вывода
