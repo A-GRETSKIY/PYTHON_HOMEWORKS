@@ -49,7 +49,7 @@ class Group:
 
 
 students = [Student('Ivan', f'Ivanov{i}', 'M', 20 + i) for i in range(20)]
-gr_1: Group = Group('New')
+gr_1 = Group('New')
 for item in students:
     gr_1.add_student(item)
 
