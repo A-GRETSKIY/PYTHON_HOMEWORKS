@@ -1,9 +1,6 @@
-LIMIT = 10
-
-
 class Person:
 
-    def __init__(self, name: str, surname: str, gender):
+    def __init__(self, name: str, surname: str, gender: str):
         self.name = name.strip().title()  # STRIP УБИРАЕТ НЕПЕЧАТАЕМЫЕ СИМВОЛЫ СЛАВА И СПРАВА
         self.surname = surname.strip().title()  # TITLE , ЧТО БЫ ИМЯ И ФАМ. БЫЛИ С БОЛЬШОЙ БУКВЫ
         self.gender = gender
@@ -20,6 +17,9 @@ class Student(Person):
 
     def __str__(self):
         return f'{super().__str__()}, {self.age}'  # ЧЕРЕЗ ФУНК. SUPER ВЫЗЫВАЕТСЯ МЕТОД STR БАЗОВОГО КЛАССА
+
+
+LIMIT = 10
 
 
 class Group:
