@@ -83,6 +83,3 @@ for item in students:
     gr_1.add_student(item)
 
 print(gr_1)
-
-
-
