@@ -12,8 +12,8 @@ class PriceError(Exception):
 class Product:
 
     def __init__(self, title, price: int | float):
-        # if not isinstance(price, int) or not isinstance(price, float) and price <= 0:
-        #     raise PriceError(price, 'Invalid price')
+        if not isinstance(price, int) or not isinstance(price, float) and price <= 0:
+            raise PriceError(price, 'Invalid price')
         self.title = title
         self.price = price
 
