@@ -1,3 +1,34 @@
+class PriceError(Exception):
+
+    def __init__(self, price: int | float, message: str):
+        super().__init__()
+        self.price = price
+        self.message = message
+
+    def __str__(self):
+        return f'Invalid {self.price}\n {self.message}'
+
+
+class Product:
+
+    def __init__(self, title, price: int | float):
+        # if not isinstance(price, int) or not isinstance(price, float) and price <= 0:
+        #     raise PriceError(price, 'Invalid price')
+        self.title = title
+        self.price = price
+
+    def __str__(self):
+        return f'{self.title} - {self.price}'
+
+
+pr_1 = Product('apple', 343324345)
+
+print(pr_1)
+
+
+###
+
+
 class Person:
 
     def __init__(self, name: str, surname: str, gender: str):
@@ -53,7 +84,7 @@ class Group:
 
 
 st_1 = Student('Ivan', 'Ivanov', 'M', 20)
-st_2 = Student('Ivan', 'Ivanov', 'M', 20)
+st_2 = Student('Ivan', 'Ivanov', 'M', 21)
 st_3 = Student('Ivan', 'Ivanov', 'M', 22)
 st_4 = Student('Ivan', 'Ivanov', 'M', 23)
 st_5 = Student('Ivan', 'Ivanov', 'M', 24)
@@ -65,15 +96,18 @@ st_10 = Student('Ivan', 'Ivanov', 'M', 29)
 
 gr_1 = Group('New')
 
-gr_1.add_student(st_1)
-gr_1.add_student(st_2)
-gr_1.add_student(st_3)
-gr_1.add_student(st_4)
-gr_1.add_student(st_5)
-gr_1.add_student(st_6)
-gr_1.add_student(st_7)
-gr_1.add_student(st_8)
-gr_1.add_student(st_9)
-gr_1.add_student(st_10)
+try:
+    gr_1.add_student(st_1)
+    gr_1.add_student(st_2)
+    gr_1.add_student(st_3)
+    gr_1.add_student(st_4)
+    gr_1.add_student(st_5)
+    gr_1.add_student(st_6)
+    gr_1.add_student(st_7)
+    gr_1.add_student(st_8)
+    gr_1.add_student(st_9)
+    gr_1.add_student(st_10)
+except Exception as ex:
+    print('The group is complete. Create a new group')
 
 print(gr_1)
