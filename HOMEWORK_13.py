@@ -1,33 +1,3 @@
-class PriceError(Exception):
-
-    def __init__(self, price: int | float, message):
-        self.price = price
-        self.message = message
-
-    def __str__(self):
-        return f'Invalid {self.price}\n {self.message}'
-
-
-class Product:
-
-    def __init__(self, title, price: int | float):
-        self.title = title
-        self.price = price
-        if not isinstance(price, int) or not isinstance(price, float) and price <= 0:
-            raise PriceError(price, 'Invalid price')
-
-    def __str__(self):
-        return f'{self.title} - {self.price}'
-
-
-pr_1 = Product('apple', 343324345)
-
-print(pr_1)
-
-
-                    ###
-
-
 class Person:
 
     def __init__(self, name: str, surname: str, gender: str):
@@ -49,7 +19,8 @@ class Student(Person):
         return f'{super().__str__()}, {self.age}'
 
 
-class NumberOfStudents(Exception):
+class GroupLimit(Exception):
+
     def __init__(self, student, message):
         self.student = student
         self.message = message
@@ -68,18 +39,41 @@ class Group:
         self.students = []
 
     def add_student(self, student: Student):
-        if len(self.students) >= LIMIT:
-            raise NumberOfStudents(student, 'Quantity of students more then 10')
-        if student not in self.students:
-            self.students.append(student)
+        if not isinstance(student, Student):
+            raise TypeError()
+        if len(self.students) == LIMIT:
+            raise GroupLimit(student, 'Quantity of students more then 10')
+        if student in self.students:
+            raise ValueError('Student already in group')
+
+        self.students.append(student)
 
     def __str__(self):
         return '\n'.join(map(str, self.students))
 
 
-students = [Student('Ivan', f'Ivanov{i}', 'M', 20 + i) for i in range(11)]
+st_1 = Student('Ivan', 'Ivanov', 'M', 20)
+st_2 = Student('Ivan', 'Ivanov', 'M', 20)
+st_3 = Student('Ivan', 'Ivanov', 'M', 22)
+st_4 = Student('Ivan', 'Ivanov', 'M', 23)
+st_5 = Student('Ivan', 'Ivanov', 'M', 24)
+st_6 = Student('Ivan', 'Ivanov', 'M', 25)
+st_7 = Student('Ivan', 'Ivanov', 'M', 26)
+st_8 = Student('Ivan', 'Ivanov', 'M', 27)
+st_9 = Student('Ivan', 'Ivanov', 'M', 28)
+st_10 = Student('Ivan', 'Ivanov', 'M', 29)
+
 gr_1 = Group('New')
-for item in students:
-    gr_1.add_student(item)
+
+gr_1.add_student(st_1)
+gr_1.add_student(st_2)
+gr_1.add_student(st_3)
+gr_1.add_student(st_4)
+gr_1.add_student(st_5)
+gr_1.add_student(st_6)
+gr_1.add_student(st_7)
+gr_1.add_student(st_8)
+gr_1.add_student(st_9)
+gr_1.add_student(st_10)
 
 print(gr_1)
