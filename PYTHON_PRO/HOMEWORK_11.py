@@ -50,7 +50,7 @@ if __name__ == '__main__':
     pr_1 = Product('apple', 20)
     pr_2 = Product('banana', 30)
 
-    cust_1 = Customer('Oleh', '+380931111111')
+    cust_1 = Customer('Petr', '+380931111111')
     cust_2 = Customer('Ivan', '+380932222222')
 
     order_1 = Order(cust_1)
@@ -63,3 +63,4 @@ if __name__ == '__main__':
     order_2.add_product(pr_1, 3)
 
     print(order_1)
+    print(order_2)

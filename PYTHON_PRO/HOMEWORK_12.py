@@ -1,56 +1,63 @@
 class Person:
 
     def __init__(self, name: str, surname: str, gender: str):
-        self.name = name
-        self.surname = surname
+        self.name = name.strip().title()  # STRIP УБИРАЕТ НЕПЕЧАТАЕМЫЕ СИМВОЛЫ СЛАВА И СПРАВА
+        self.surname = surname.strip().title()  # TITLE , ЧТО БЫ ИМЯ И ФАМ. БЫЛИ С БОЛЬШОЙ БУКВЫ
         self.gender = gender
 
-
     def __str__(self):
-        return f'{self.surname} {self.name}, {self.gender}'
+        return f'{self.surname} {self.name[0]}., {self.gender}'
 
 
 class Student(Person):
-    count = 0
 
-    def __init__(self, age: int, name: str, surname: str, gender: str):
+    def __init__(self, name: str, surname: str, gender: str, age: int):
         super().__init__(name, surname, gender)
         self.age = age
 
-        Student.count += 1
-
     def __str__(self):
-        return f'{self.surname} {self.name}, {self.gender}, {self.age}'
+        return f'{super().__str__()}, {self.age}'  # ЧЕРЕЗ ФУНК. SUPER ВЫЗЫВАЕТСЯ МЕТОД STR БАЗОВОГО КЛАССА
 
-# Создайте класс Группа, который содержит список  из 10
-# объектов класса Студент. Реализуйте методы добавления,
-# удаления студента и метод поиска студента по фамилии.
-# Определите для Группы метод __str__() для возвращения списка
-# студентов в виде строки
+
+LIMIT = 10
 
 
 class Group:
-    def __init__(self, course, students=None):
-        if isinstance(students, list):
-            self.students = students
-        else:
-            self.students = []
 
-        self.title = f'{course}'
+    def __init__(self, title: str):
+        self.title = title
+        self.students = []
+
+    def add_student(self, student: Student):
+        if student not in self.students and len(self.students) < LIMIT:
+            self.students.append(student)
+
+    def del_student(self, student: Student):
+        if student in self.students:
+            self.students.remove(student)
+
+    def search_by_surname(self, value):
+        res = [stud for stud in self.students if stud.surname == value]
+        return res or None  # return res if res else None # ЕСЛИ В СПИСКЕ ЕСТЬ ЭЛЕМ.-ВЕРНУТЬ ЭТОТ СПИСОК, ИНАЧЕ-NONE
+
+    def search_by_chr(self, value):  # НАЧИНАЕТСЯ ЛИ ФАМИЛИЯ НА КАКОЙ-ТО СИМВОЛ??? МЕТОД - startswith
+        res = [stud for stud in self.students if stud.surname.startswith(value) or stud.name.startswith(value)]
+        return res if res else None  # return res or None
 
     def __str__(self):
-        res = f'{self.title}:\n'
-        res += '\n'.join(map(str, self.students))
-        return res
+        return '\n'.join(map(str, self.students))
 
 
-st_1 = Student('Ivan', 'Ivanov', 'M', 20)
-st_2 = Student('Ivan', 'Ivanov', 'M', 20)
-st_3 = Student('Ivan', 'Ivanov', 'M', 20)
-st_4 = Student('Ivan', 'Ivanov', 'M', 20)
-st_5 = Student('Ivan', 'Ivanov', 'M', 20)
-st_6 = Student('Ivan', 'Ivanov', 'M', 20)
-st_7 = Student('Ivan', 'Ivanov', 'M', 20)
-st_8 = Student('Ivan', 'Ivanov', 'M', 20)
-st_9 = Student('Ivan', 'Ivanov', 'M', 20)
-st_10 = Student('Ivan', 'Ivanov', 'M', 20)
+students = [Student('Ivan', f'Ivanov{i}', 'M', 20 + i) for i in range(20)]
+gr_1 = Group('New')
+for item in students:
+    gr_1.add_student(item)
+
+print(gr_1)  # выводит всех студентов
+
+gr_1.del_student(students[0])  # удаляет студента по индексу
+
+print(gr_1.search_by_chr('Ivanov2'))  # выводит по символам, но как объекты
+
+for item in gr_1.search_by_chr('Ivanov2'):
+    print(item)  # выводит по символам, но в стандартный поток вывода

@@ -127,7 +127,7 @@ class A:
 class B(A):
 
     def __init__(self, c=None, *args, **kwargs):
-        super(B, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
         self.c = c
 
