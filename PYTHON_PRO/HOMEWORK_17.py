@@ -12,6 +12,7 @@ def geom(q, stop):
         yield index * q
         index += 1
 
+
 x = geom(2, 200)
 for item in x:
     print(item)
