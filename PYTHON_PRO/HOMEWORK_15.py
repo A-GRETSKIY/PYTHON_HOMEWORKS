@@ -100,12 +100,6 @@ class Rational:
     def __le__(self, other):
         return self.a / self.b <= other.a / other.b
 
-    def __str__(self):
-        if self.a / self.b > 1:
-            return f'{self.a // self.b} ({self.a - self.a // self.b * self.b} / {self.b})'
-        tmp = math.gcd(self.a, self.b)
-        return f'{self.a // tmp} / {self.b // tmp}'
-
 
 num_1 = Rational(2, 3)
 num_2 = Rational(1, 2)
